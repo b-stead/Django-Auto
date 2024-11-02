@@ -2,11 +2,6 @@
 
 This repository contains a Django project setup with automated configuration scripts for project initialization, settings modularization, and dependency management. The folder structure and scripts help streamline the creation and management of Django projects with custom settings and Tailwind CSS integration.
 
-## Folder Structure
-
-Django-Auto/ ├── setup_django_project.sh # Main script to set up Django project structure ├── setup_django_settings.sh # Script to set up modular settings files ├── SRC/ │ ├── <project_name>/ # Django project folder created by setup script │ │ ├── manage.py # Django entry point │ │ ├── settings/ # Modular settings directory │ │ │ ├── includes/ │ │ │ │ └── base.py # Base settings loaded across environments │ │ │ ├── local_dev.py # Local development settings │ │ │ ├── staging.py # Staging environment settings │ │ │ ├── prod.py # Production settings │ └── venv/ # Virtual environment directory └── .gitignore # Common files and folders to ignore in Git
-
-
 ## Requirements
 
 - **Python 3.12+**
@@ -24,12 +19,16 @@ Django-Auto/ ├── setup_django_project.sh # Main script to set up Django pr
 2. Make sure both scripts are executable:
 chmod +x setup_django_project.sh setup_django_settings.sh
 
-3. Run the setup script to create a new Django project.
+3. Create Python VENV
+
+4. Activate VENV
+
+5. Run the setup script to create a new Django project.
 ./setup_django_project.sh <project_name>
 
 Replace <project_name> with your desired project name.
 
-Scripts
+## Scripts
 
 setup_django_project.sh
 
@@ -41,7 +40,7 @@ Sets up Tailwind CSS for front-end styling.
 Configures .gitignore and .env files with common entries.
 Calls setup_django_settings.sh to set up a modular settings structure.
 
-Usage:
+## Usage:
 ./setup_django_project.sh <project_name>
 
 setup_django_settings.sh
@@ -56,7 +55,7 @@ Usage:
 This script is automatically called by setup_django_project.sh, but you can also run it separately if needed:
 
 
-Tailwind CSS Usage
+## Tailwind CSS Usage
 
 The setup includes Tailwind CSS for styling. To run Tailwind in development mode:
 npm run dev
@@ -64,7 +63,7 @@ npm run dev
 
 This command watches for changes in the Tailwind source files and outputs CSS to the appropriate directory.
 
-Configuration and Customization
+## Configuration and Customization
 
 Environment Variables: Place your environment-specific variables (e.g., SECRET_KEY, DATABASE_URL) in the .env file or export them directly in your shell session.
 DJANGO_ENV: Set this variable to local_dev, staging, or production to control which settings are loaded.
