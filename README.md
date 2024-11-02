@@ -65,14 +65,25 @@ This command watches for changes in the Tailwind source files and outputs CSS to
 
 ## Configuration and Customization
 
-Environment Variables: Place your environment-specific variables (e.g., SECRET_KEY, DATABASE_URL) in the .env file or export them directly in your shell session.
-DJANGO_ENV: Set this variable to local_dev, staging, or production to control which settings are loaded.
-Additional Apps: Add any additional Django apps to the INSTALLED_APPS list in settings/includes/base.py.
-Troubleshooting
+Environment Variables: 
 
-BASE_DIR Issues: If BASE_DIR is not set correctly, check its definition in settings/includes/base.py. It should be targeting the project root where manage.py is located.
-Package Issues: If required packages aren’t installing, ensure your virtual environment is activated and pip is updated.
-License
+Place your environment-specific variables (e.g., SECRET_KEY, DATABASE_URL) in the .env file or export them directly in your shell session.
+
+DJANGO_ENV: Set this variable to local_dev, staging, or production to control which settings are loaded.
+
+Additional Apps: 
+Add any additional Django apps to the INSTALLED_APPS list in settings/includes/base.py.
+
+## Troubleshooting
+
+BASE_DIR Issues: 
+
+If BASE_DIR is not set correctly, check its definition in settings/includes/base.py. It should be targeting the project root where manage.py is located.
+
+## Package Issues: 
+If required packages aren’t installing, ensure your virtual environment is activated and pip is updated.
+
+## License
 
 This project is open-source and available under the MIT License.
 
