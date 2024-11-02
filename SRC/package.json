@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  },
+  "scripts": {
+    "dev": "tailwindcss -i ./automaticity/static/src/main.css -o ./automaticity/static/css/output.css --watch"
+  }
+}

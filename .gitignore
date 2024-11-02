@@ -1,0 +1,21 @@
+
+# Python files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environment
+venv/
+
+# Django settings
+SRC/automaticity/.env
+
+# Node modules for Tailwind (if applicable)
+node_modules/
+
+# Static files
+staticfiles/
+
+# Database
+db.sqlite3
+
