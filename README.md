@@ -1,4 +1,4 @@
-# Django Project Setup with Automated Configuration
+# Django/Tailwind Project Setup with Automated Configuration
 
 This repository contains a Django project setup with automated configuration scripts for project initialization, settings modularization, and dependency management. The folder structure and scripts help streamline the creation and management of Django projects with custom settings and Tailwind CSS integration.
 
