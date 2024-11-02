@@ -13,7 +13,7 @@ This repository contains a Django project setup with automated configuration scr
 1. Clone this repository and navigate into the folder:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/b-stead/Django-Auto.git
    cd Django-Auto
 
 2. Make sure both scripts are executable:
