@@ -9,13 +9,13 @@ fi
 
 PROJECT_NAME=$1
 
-# Step 2: Install Django and other required packages
+# Step 1: Install Django and other required packages
 python3 -m pip install --upgrade pip
 pip install django python-dotenv ruff logfire[django]
 
-# Step 3: Create project structure
+# Step 2: Create project structure
+# Create .gitignore
 
-# Step 9: Create .gitignore and .env
 echo "
 # Python files
 __pycache__/
@@ -42,7 +42,7 @@ mkdir -p SRC
 cd SRC
 django-admin startproject $PROJECT_NAME
 
-# Step 4: Set up Tailwind CSS
+# Step 3: Set up Tailwind CSS
 npm install -D tailwindcss
 npx tailwindcss init
 
@@ -53,7 +53,7 @@ SECRET_KEY='your-secret-key'
 LOGFIRE_API_KEY='your-logfire-api-key'
 " > $PROJECT_NAME/.env
 
-# Step 5: Create Tailwind directories and files
+# Step 4: Create Tailwind directories and files
 mkdir -p $PROJECT_NAME/static/src $PROJECT_NAME/static/css
 echo "@tailwind base; @tailwind components; @tailwind utilities;" > $PROJECT_NAME/static/src/main.css
 touch $PROJECT_NAME/static/css/output.css
@@ -68,10 +68,10 @@ echo '{
   }
 }' > package.json
 
-# Step 3: Use sed to replace the placeholder ${PROJECT_NAME} with the actual project name
+# Use sed to replace the placeholder ${PROJECT_NAME} with the actual project name
 sed -i '' "s/\${PROJECT_NAME}/$PROJECT_NAME/g" package.json
 
-# Step 8: Create ruff configuration file
+# Step 5: Create ruff configuration file
 echo "
 [tool.ruff]
 line-length = 120
@@ -92,18 +92,17 @@ docstring-code-line-length = "dynamic"
 
 [tool.ruff.lint.isort]
 case-sensitive = true
-" > ../pyproject.toml
-
-# Step 10: Navigate to the project directory and apply migrations
-cd $PROJECT_NAME
+" > ../../pyproject.toml
 
 # Step 6: Start core app for custom user model and other logic
+cd $PROJECT_NAME
+
 python manage.py startapp core
 
 mkdir -p core/templates/core
 touch core/templates/core/base.html
 
-# update tailwind.config.js
+# Step 7: update tailwind.config.js
 cd ..
 
 cat <<EOL > tailwind.config.js
@@ -119,7 +118,7 @@ module.exports = {
 }
 EOL
 
-# Step 7: Update project settings to a modular structure
+# Step 8: Update project settings to a modular structure
 # Call setup_django_settings.sh with the project name
 cd ..
 bash setup_django_settings.sh $PROJECT_NAME
@@ -170,7 +169,7 @@ class CustomUser(AbstractBaseUser):
 "
 echo "$CUSTOM_USER_MODEL" > core/models.py
 
-# Migrate database
+# Step 10: Migrate database
 python manage.py makemigrations
 python manage.py migrate
 
